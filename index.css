@@ -4,7 +4,7 @@ body{
   height:100vh;
   width:100vw;
   display:grid;
-  grid-template: 2fr 8fr/ 2fr 6fr 2fr;
+  grid-template: 2fr 8fr/ 2fr 10fr 2fr;
   grid-template-areas:"section header header"
    "section main aside";
    font-family:"Roboto","Sans-serif";
@@ -270,59 +270,161 @@ main>.mainprojects>div>.projectcard>h2,main>.mainprojects>div>.projectcard>p{
 
 
 
-
 aside{
-   
-    grid-area:aside;
+    background-color: #f1f5f9;
     display:grid;
-    grid-template:1fr 1fr/1fr;
+    grid-template:1fr 5fr 1fr 4fr/ 1fr;
+    grid-template-areas:
+    "asideannouncetitle "
+    "asideannounce" 
+    "asidetrendtitle"
+    "asidetrend ";
     padding:1rem;
-    background:#f1f5f9;
-}
-
-aside>.asideannounce,aside>.asidetrend{
-
-    display:grid;
-    grid-template:1fr 4fr/1fr;
+    padding-right:5rem;
+   
     
+   
 }
 
-aside>.asideannounce>p,aside>.asidetrend>p{
-    
-    margin:0;
-    place-self:center start;
-    font-weight:bolder;
-    font-size:1.3rem;
-    padding-bottom:0.5rem;
+aside>.asidetrend,aside>.asideannounce{
 
-
-}
-
-
-aside>.asideannounce>.announcecontent,aside>.asidetrend>.trendcontent{
-    display:grid;
+    box-shadow:0.15rem 0.2rem 0.1rem lightgray;
+    border-radius:1rem;
     background:white;
-    grid-template:1fr 1fr 1fr/1fr;
-    padding:1.3rem;
-   border:1px solid black;
-   border-radius:0.5rem;
-   place-self:center start;
+    padding:1.5rem;
+    padding-left: 2rem;
 }
 
-aside>.asideannounce>.announcecontent>div>{
+aside>.asidetrend{
+
+    grid-area:asidetrend;
+}
+
+aside>.asidetrendtitle{
+
+    grid-area:asidetrendtitle;
+}
+
+
+aside>.asideannounce{
+
+    grid-area:asideannounce;
+    display:grid;
+    grid-template:1fr/1fr;
+  
+}
+
+aside>.asidetrendtitle,aside>.asideannouncetitle{
+    font-weight:bold;
+    font-size:1.1rem;
+    place-self:center start; 
+}
+
+aside>.asideannouncetitle{
+
+    grid-area:asideannouncetitle;
+}
+
+.asideannounce>.announcecenter{
+    
+    display:grid;
+    grid-template:1fr 1fr 1fr/1fr;
+    
+}
+
+.asideannounce>.announcecenter>div>p{
+    font-weight:bold;
+    margin:0;
+}
+
+.asideannounce>.announcecenter>div>p+p{
+   opacity: 0.7;
+   font-size:0.8rem;
+   margin:0;
+}
+.asideannounce>.announcecenter>div{
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+}
+
+.asideannounce>.announcecenter>div:first-child,.asideannounce>.announcecenter>div:nth-child(2){
+
+    border-bottom:2px solid lightgray;
+
+
+}
+
+.asidetrend>.trendcenter{
+    display:grid;
+    grid-template:repeat(4,1fr)/1fr;
+    gap:0.3rem;
+}
+
+.asidetrend>.trendcenter>.trendprofile{
+
+    display:flex;
+    flex-direction:row;
+    justify-content:start;
+  
+}
+
+
+
+.asidetrend>.trendcenter>.trendprofile>div>p{
+
+    margin:0;
+}
+
+.asidetrend>.trendcenter>.trendprofile>div{
+
     display:flex;
     flex-direction:column;
-    align-items:start;
+    justify-content:center;
+    padding-left:0.5rem;
+}
+
+.asidetrend>.trendcenter>.trendprofile>img{
+    width:100%;
+    height:auto;
+    border-radius:50%;
+    max-width:3rem;
 
 }
 
-aside>.asideannounce>.announcecontent>div>span{
-    margin-bottom:1rem;
-}
 
-aside>.asideannounce>.announcecontent>div>h3{
-    margin:0;
-}
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
